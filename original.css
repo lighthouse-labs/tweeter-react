@@ -1,0 +1,360 @@
+/* layout */
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ */
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/*
+ * Global layout 
+ */
+
+body {
+	/*Custom font, loaded via Google */
+	font-family: "Source Sans Pro", sans-serif;
+	margin: 0;
+	color: #545149;
+	background-color: #f4f1ec;
+	font-size: 24px;
+}
+
+aside {
+	background-color: #d79922;
+	/* Using an image as a background */
+	background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+	height: 400px;
+}
+
+/* Tablet and mobile layout*/
+
+@media only screen and (max-width: 1025px) {
+	aside {
+		width: 100%;
+	}
+
+	.container {
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+
+/*Desktop layout*/
+
+@media only screen and (min-width: 1025px) {
+	aside {
+		width: 30%;
+		float: left;
+		margin: 220px 0px 220px 60px;
+	}
+
+	.container {
+		width: 50%;
+		float: right;
+		margin: 160px 60px;
+	}
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 120px;
+	background: #4056a1;
+	padding: 1.5em 1.5em;
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+}
+
+.nav--text {
+	float: left;
+	margin-left: 10px;
+	font-size: 1.5em;
+	font-family: "Bungee", cursive;
+	color: #fff;
+}
+
+.btn__text {
+	position: fixed;
+	top: 1.5em;
+	right: 2.5em;
+	cursor: pointer;
+	color: #fff;
+	float: right;
+	text-decoration: none;
+}
+
+.btn--borderless {
+	text-align: center;
+	cursor: pointer;
+	font-size: 22px;
+	line-height: 20px;
+	font-weight: 300;
+}
+
+.btn__icon {
+	font-size: 1em;
+	color: #f13c20;
+	margin-top: 0.2em;
+	animation: float 2s infinite ease;
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(0.5rem);
+		-webkit-transform: translateY(0.5rem);
+	}
+
+	100% {
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+	}
+}
+
+.btn--bold {
+	font-weight: 600;
+}
+
+.btn--scroll {
+	display: block;
+}
+
+.round-btn {
+	background-color: #f13c20;
+	background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+	height: 90px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	outline: 0;
+	display: none;
+	margin: 250px 0px 0px 20px;
+	color: #fff;
+	border-radius: 100%;
+	width: 90px;
+	/*Cursor change to show it's a clickable button*/
+	cursor: pointer;
+	box-shadow: 0 3px 5px #ccc;
+}
+
+.round-btn__icon {
+	font-size: 1.5em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1025px) {
+	nav {
+		background: none;
+	}
+}
+
+.tweet {
+	display: block;
+	margin: 40px 0px;
+	padding: 10px;
+	border: 4px solid #545149;
+}
+
+.tweet:hover {
+	-webkit-box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
+	-moz-box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
+	box-shadow: 8px 8px 0px 0px rgba(197, 203, 227, 1);
+}
+
+.tweet--header {
+	padding: 8px;
+	transition: all 0.25s ease-in-out;
+}
+
+.tweet--header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.tweet--avatar {
+	float: left;
+	width: 50px;
+	height: 50px;
+	padding: 2px;
+}
+
+.tweet--name {
+	font-size: 24px;
+	float: left;
+	margin: 0.5em 0px 0px 0.5em;
+	font-weight: 300;
+}
+
+.tweet--handle {
+	float: right;
+	color: #c5cbe3;
+	margin-top: 8px;
+	font-size: 24px;
+	padding: 2px 10px;
+}
+
+.tweet--body {
+	padding: 10px 20px;
+	word-wrap: break-word;
+}
+
+.tweet--footer {
+	padding: 8px 20px;
+	font-size: 0.8em;
+	border-top: 4px solid #545149;
+}
+
+.footer--actions {
+	transition: opacity 0.2s ease-in-out;
+	opacity: 0;
+	float: right;
+}
+
+.footer--actions {
+	opacity: 1;
+}
+
+.footer--actions i {
+	transition: all 0.15s ease-in-out;
+	color: #4056a1;
+	opacity: 1;
+	margin-left: 8px;
+}
+
+.footer--actions i:hover {
+	opacity: 1;
+	color: #d79922;
+}
+
+.newtweet__form {
+	width: 100%;
+	padding: 10px;
+	background: #f4f1ec;
+	margin: 50px 0px;
+}
+
+.form__textarea {
+	width: 100%;
+	height: 50px;
+	font-size: 20px;
+	display: block;
+	border: none;
+	border-bottom: 4px solid #545149;
+	background: #f4f1ec;
+	margin: 0;
+	outline: none;
+	overflow: auto;
+	resize: none;
+}
+
+.form__textarea::placeholder {
+	color: #545149;
+	opacity: 1;
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.form__input {
+	color: #000;
+	font-family: "Bungee", cursive;
+	font-size: 20px;
+	line-height: 20px;
+	color: #fff;
+	border: none;
+	background-color: #4056a1;
+	text-decoration: none;
+	padding: 6px 12px;
+	cursor: pointer;
+	margin-top: 0.8em;
+}
+
+.form__counter {
+	font-family: "Bungee", cursive;
+	font-size: 1em;
+	float: right;
+	margin-right: 8px;
+	margin-top: 0.6em;
+}
+
+.form--red {
+	color: #f13c20;
+}
+
+.error-container {
+	border: 4px solid #f13c20;
+	padding: 10px 20px;
+	margin: 30px auto;
+	display: none;
+	font-weight: 600;
+	color: #f13c20;
+}
+
+.error-container h4 {
+	font-weight: 300;
+	display: inline;
+}
+
+.fa-exclamation-triangle {
+	margin: 0 4px;
+}
+
+.profile {
+	position: relative;
+	padding: 12px;
+	height: 80%;
+}
+
+.profile__name {
+	text-align: center;
+	width: 100%;
+	margin-top: -40px;
+}
+
+.profile__name h2 {
+	margin: 0;
+	font-weight: 300;
+	color: #fff;
+}
+
+.profile--bold {
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 1025px) {
+	.profile__image {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 200px;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.profile__image {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
