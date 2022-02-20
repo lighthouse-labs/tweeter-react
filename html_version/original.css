@@ -16,7 +16,9 @@ html {
 /*
  * Global layout 
  */
-
+html{
+	scroll-behavior:smooth;
+}
 body {
 	/*Custom font, loaded via Google */
 	font-family: "Source Sans Pro", sans-serif;
@@ -82,7 +84,11 @@ nav {
 	margin-left: 10px;
 	font-size: 1.5em;
 	font-family: "Bungee", cursive;
+}
+.nav--text a{
 	color: #fff;
+	text-decoration: none;
+
 }
 
 .btn__text {
@@ -273,6 +279,11 @@ nav {
 	font-weight: 600;
 	font-size: 25px;
 }
+
+.form__textarea::-webkit-scrollbar{
+    display: none;
+}	
+	
 
 .form__input {
 	color: #000;
